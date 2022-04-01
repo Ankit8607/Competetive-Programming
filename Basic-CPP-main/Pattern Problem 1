@@ -1,0 +1,26 @@
+An index will have *(asterisk) if its row/column number is a multiple of 3(0-indexing), otherwise character would be .(dot).
+
+Time Complexity per test case: O(N*M)
+
+#include <bits/stdc++.h>
+using namespace std;
+
+#define IOS ios::sync_with_stdio(0); cin.tie(0); cout.tie(0);
+
+int main() {
+    IOS
+    int t;
+    cin >> t;
+    while (t--) {
+        int n, m;
+        cin >> n >> m;
+        for (int i = 0; i < 3*n+1; ++i) {
+            for (int j = 0; j < 3*m + 1; ++j) {
+                if(i%3==0 || j%3 == 0) cout << "*";
+                else cout << ".";
+            }
+            cout << "\n";
+        }
+    }
+    return 0;
+}

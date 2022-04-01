@@ -1,0 +1,31 @@
+An index will have * (asterisk) if its row/column number is a multiple of (p+1)(0-indexing), / (slash) if (i+j) is a multiple of (p+1), \ (backslash) if (i-j) is a multiple of (p+1), otherwise character would be . (dot).
+
+Time Complexity per test case: O(N*M*P*P)
+
+ 
+
+#include <bits/stdc++.h>
+using namespace std;
+
+#define IOS ios::sync_with_stdio(0); cin.tie(0); cout.tie(0);
+
+int main() {
+    IOS
+    int t;
+    cin >> t;
+    while (t--) {
+        int n, m, p;
+        cin >> n >> m >> p;
+        for (int i = 0; i < (p+1)*n+1; ++i) {
+            for (int j = 0; j < (p+1)*m + 1; ++j) {
+                if(i%(p+1) == 0 || j%(p+1) == 0) cout<<"*";
+                else if((i+j)%((p+1)*2)==0) cout<<"/";
+                else if((i-j)%((p+1)*2)==0) cout<<"\\";
+                else cout<<".";
+            }
+            cout<<"\n";
+        }
+        cout<<"\n";
+    }
+    return 0;
+}

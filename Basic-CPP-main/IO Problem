@@ -1,0 +1,35 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define int long long 
+#define ld long double
+int mod= 1e9+7;
+#define endl "\n"
+#define IOS ios::sync_with_stdio(0); cin.tie(0); cout.tie(0);
+
+int power(int a,int b)
+{
+    if(!b)
+        return 1;
+    int temp=power(a,b/2);
+    temp*=temp;
+    if(b%2==1)
+        temp*=a;
+    return temp;
+}
+void solve()
+{
+    int x;
+    string m;
+    cin>>x>>m;
+    int y=stoi(m);
+    int z=stoi(m.substr(m.find('.')+1));
+    cout<<x+z<<"."<<x+y<<endl;
+}
+
+signed main(){
+    IOS
+    int t=1;
+    cin>>t;
+    while(t--) solve();
+    return 0;
+}
